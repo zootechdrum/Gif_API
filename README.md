@@ -9,4 +9,5 @@ This project involves using GIPHY API to retrive awesome GIFS.
 3. HTML5
 
 ##Quick snapshot of the project
-![giphyloop](/assets/images/giphyloop.gif)
+
+![giphyloop](assets/images/giphyloop.gif)
