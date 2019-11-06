@@ -9,4 +9,4 @@ This project involves using GIPHY API to retrive awesome GIFS.
 3. HTML5
 
 ##Quick snapshot of the project
-![sampleOfProject](/assets/images/sampleOfProject.gif)
+![sampleOfProject](assets/images/sampleOfProject.gif)
