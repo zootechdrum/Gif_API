@@ -1,0 +1,39 @@
+form{
+  margin-top:15px;
+  height:30px;
+}
+
+input[type=submit]{
+color:white; 
+border-radius:10px;
+background-color:black;
+padding:5px;
+}
+
+
+img{
+  height:160px;
+  width:400px;
+  margin-top:40px;
+}
+
+.btn{
+  display:block;
+  margin:0 auto;
+  margin-top: 10px;
+  min-width:100px;
+}
+
+#buttonDisplay{
+  border-radius:10px;
+  height:100%;
+  background-color:red;
+  text-align:center;
+  padding:5px;
+}
+
+.null-result{
+  margin-top:30px;
+  font-weight:900px;
+  color: #9B0707;
+}
