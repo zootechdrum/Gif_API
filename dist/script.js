@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+  let faveSave = [];
   
   function callAjax(query = "cats") {
     let randomNum = Math.floor(Math.random() * 110); 
@@ -14,8 +16,10 @@ $(document).ready(function() {
             $("#theDiv").html("<h2 class=' null-result text-center'>Nothing to see here</h2>")
           }
           for (var i = 0; i < data.data.length; i++) {
+
             let stillImg =  data.data[i].images.original_still.url
             let animateImg = data.data[i].images.original_still.url
+
             $("#theDiv").append(
               "<div class='gif text-center'>"+
               "<img class='col-lg'+ data-animation=still data-stillURL=" +
@@ -25,7 +29,7 @@ $(document).ready(function() {
               ' src= "' +
               data.data[i].images.original_still.url +
               '"/>'+
-              "<button class='add2Fav btn btn-primary' src="+stillImg+">Add to Fav</button>"+
+              "<button class='add2Fav btn btn-primary' data-animate="+animateImg+" data-still="+stillImg+">Add to Fav</button>"+
             "</div>"
             );
           }
@@ -83,6 +87,17 @@ $(document).ready(function() {
     callAjax()
    $('button').not(':first').remove();
    
- })               
+ })   
+ 
+ //If user click Add2Fav buttons push into faveSave array
+ $("#theDiv").on( "click",".add2Fav", function() {
+   let still = $(this).data('still')
+   let animate = $(this).data('animate')
+
+   faveSave.push({'animate':animate, 'still':still})
+   console.log(faveSave);
+   
+ });
+
   callAjax();
 });
