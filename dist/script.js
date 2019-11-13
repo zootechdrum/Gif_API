@@ -1,9 +1,10 @@
 $(document).ready(function() {
   
   function callAjax(query = "cats") {
+    let randomNum = Math.floor(Math.random() * 110); 
     let url =
         "https://api.giphy.com/v1/gifs/search?q=" +
-        query +
+        query +"&offset="+randomNum+
         "&api_key=NfM4emDcpHFys72tLukVaGJDK0s9wszS";
     $.ajax(
       url, // request url
@@ -13,14 +14,19 @@ $(document).ready(function() {
             $("#theDiv").html("<h2 class=' null-result text-center'>Nothing to see here</h2>")
           }
           for (var i = 0; i < data.data.length; i++) {
+            let stillImg =  data.data[i].images.original_still.url
+            let animateImg = data.data[i].images.original_still.url
             $("#theDiv").append(
-              "<img class='col-lg-3'+ data-animation=still data-stillURL=" +
+              "<div class='gif text-center'>"+
+              "<img class='col-lg'+ data-animation=still data-stillURL=" +
               data.data[i].images.original_still.url +
               " data-animateURL=" +
               data.data[i].images.original.url +
               ' src= "' +
               data.data[i].images.original_still.url +
-              '"/>'
+              '"/>'+
+              "<button class='add2Fav btn btn-primary' src="+stillImg+">Add to Fav</button>"+
+            "</div>"
             );
           }
         }
