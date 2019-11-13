@@ -18,7 +18,7 @@ $(document).ready(function() {
           for (var i = 0; i < data.data.length; i++) {
 
             let stillImg =  data.data[i].images.original_still.url
-            let animateImg = data.data[i].images.original_still.url
+            let animateImg = data.data[i].images.original.url
 
             $("#theDiv").append(
               "<div class='gif text-center'>"+
@@ -37,26 +37,6 @@ $(document).ready(function() {
       }
     );
   }
-
-  $("#theDiv").on(
-    {
-      mouseenter: function() {
-        let animateURL = $(this).attr("data-animateURL");
-        if ($(this).attr("data-animation") === "still") {
-          $(this).attr("data-animation", "animate");
-          $(this).attr("src", animateURL);
-        }
-      },
-      mouseleave: function() {
-        let stillURL = $(this).attr("data-stillURL");
-        if ($(this).attr("data-animation") === "animate") {
-          $(this).attr("data-animation", "still");
-          $(this).attr("src", stillURL);
-        }
-      }
-    },
-    "img"
-  );
 
   $("#form").submit(function(event) {
     event.preventDefault();
@@ -93,11 +73,52 @@ $(document).ready(function() {
  $("#theDiv").on( "click",".add2Fav", function() {
    let still = $(this).data('still')
    let animate = $(this).data('animate')
+   console.log("-----")
+   console.log(still)
+   console.log(animate)
 
    faveSave.push({'animate':animate, 'still':still})
-   console.log(faveSave);
-   
  });
 
+ //function will fire when faves need to be displayed
+ $("#showFav").on( "click", function() {
+  $("#theDiv").empty()
+
+  for(let j = 0; j<faveSave.length; j++){
+
+    $("#theDiv").append(
+      "<div class='gif text-center'>"+
+      "<img class='col-lg' data-animation=still data-stillURL=" +
+      faveSave[j].still +
+      " data-animateURL=" +
+      faveSave[j].animate +
+      ' src= "' +
+      faveSave[j].still +
+      '"/>'+
+    "</div>"
+    ); 
+  }
+ });
+
+ $("#theDiv").on(
+  {
+    mouseenter: function() {
+      let animateURL = $(this).attr("data-animateURL");
+      console.log(animateURL)
+      if ($(this).attr("data-animation") === "still") {
+        $(this).attr("data-animation", "animate");
+        $(this).attr("src", animateURL);
+      }
+    },
+    mouseleave: function() {
+      let stillURL = $(this).attr("data-stillURL");
+      if ($(this).attr("data-animation") === "animate") {
+        $(this).attr("data-animation", "still");
+        $(this).attr("src", stillURL);
+      }
+    }
+  },
+  "img"
+);
   callAjax();
 });
