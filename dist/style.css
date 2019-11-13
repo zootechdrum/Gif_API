@@ -32,6 +32,9 @@ img{
   margin-top: 10px;
   min-width:100px;
 }
+button{
+  max-width:130px;
+}
 
 #buttonDisplay{
   border-radius:10px;
