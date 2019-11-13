@@ -73,9 +73,7 @@ $(document).ready(function() {
  $("#theDiv").on( "click",".add2Fav", function() {
    let still = $(this).data('still')
    let animate = $(this).data('animate')
-   console.log("-----")
-   console.log(still)
-   console.log(animate)
+
 
    faveSave.push({'animate':animate, 'still':still})
  });
@@ -83,28 +81,33 @@ $(document).ready(function() {
  //function will fire when faves need to be displayed
  $("#showFav").on( "click", function() {
   $("#theDiv").empty()
+  
+  let y = localStorage.setItem('items', JSON.stringify(faveSave))
+  let localData = JSON.parse(localStorage.getItem('items'))
 
-  for(let j = 0; j<faveSave.length; j++){
+  for(let j = 0; j<localData.length; j++){
 
     $("#theDiv").append(
       "<div class='gif text-center'>"+
       "<img class='col-lg' data-animation=still data-stillURL=" +
-      faveSave[j].still +
+      localData[j].still +
       " data-animateURL=" +
-      faveSave[j].animate +
+      localData[j].animate +
       ' src= "' +
-      faveSave[j].still +
+      localData[j].still +
       '"/>'+
     "</div>"
     ); 
   }
+
+  console.log( localData )
  });
+
 
  $("#theDiv").on(
   {
     mouseenter: function() {
       let animateURL = $(this).attr("data-animateURL");
-      console.log(animateURL)
       if ($(this).attr("data-animation") === "still") {
         $(this).attr("data-animation", "animate");
         $(this).attr("src", animateURL);
