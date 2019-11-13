@@ -2,6 +2,14 @@ form{
   margin-top:15px;
   height:30px;
 }
+#formContent{
+  text-align: center;
+  display:block;
+}
+
+#theDiv{
+  text-align: center;
+}
 
 input[type=submit]{
 color:white; 
@@ -54,4 +62,10 @@ img{
   cursor: pointer;
   color:pink;
   font-size: 20px;
+}
+
+@media only screen and (max-width: 991px){
+  .history{
+    margin-top:15px;
+  }
 }
