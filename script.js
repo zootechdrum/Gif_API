@@ -78,7 +78,6 @@ $(document).ready(function() {
 
 
    faveSave.push({'animate':animate, 'still':still})
-   let y = localStorage.setItem('items', JSON.stringify(faveSave))
  });
 
  //function will fire when faves need to be displayed
@@ -88,7 +87,7 @@ $(document).ready(function() {
 if( faveSave.length > 0 && localData.length === 0){
   localData = faveSave;
   localData.push(faveSave)
-  localStorage.setItem('items', JSON.stringify(faveSave))
+  localStorage.setItem('items', JSON.stringify(localData))
 
 }
 
