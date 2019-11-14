@@ -3,6 +3,7 @@ $(document).ready(function () {
   let faveSave = [];
 
   let localData = JSON.parse(localStorage.getItem('items'))
+  console.log(localData)
 
   function callAjax(query = "cats") {
     let randomNum = Math.floor(Math.random() * 110);
@@ -82,10 +83,17 @@ $(document).ready(function () {
   });
 
   function storeItems(obj){
-    console.log(localData)
+    if(localData === null && obj !== undefined){
+      faveSave.push(obj)
+      localData = faveSave
+      localStorage.setItem("items", JSON.stringify(localData))
+    }else if(localData === null && obj === undefined){
+      localData = [];
+    }else{
     localData.push(obj)
     localStorage.setItem("items", JSON.stringify(localData))
   }
+}
 
 
   //function will fire when faves need to be displayed
