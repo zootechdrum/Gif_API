@@ -76,22 +76,21 @@ $(document).ready(function () {
     let still = $(this).data('still')
     let animate = $(this).data('animate')
 
+    
 
-    localData.push({ 'animate': animate, 'still': still })
+    storeItems({ 'animate': animate, 'still': still })
   });
+
+  function storeItems(obj){
+    console.log(localData)
+    localData.push(obj)
+    localStorage.setItem("items", JSON.stringify(localData))
+  }
+
 
   //function will fire when faves need to be displayed
   $("#showFav").on("click", function () {
     $("#theDiv").empty()
-
-    if (faveSave.length > 0 && localData.length === 0) {
-        localData = faveSave;
-        localData.push(faveSave)
-        localStorage.setItem('items', JSON.stringify(localData))
-
-    }
-
-
     for (let j = 0; j < localData.length; j++) {
 
       $("#theDiv").append(
@@ -106,8 +105,9 @@ $(document).ready(function () {
         "</div>"
       );
     }
-
   });
+
+
 
 
   $("#theDiv").on(
