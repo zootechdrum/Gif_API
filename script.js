@@ -1,6 +1,8 @@
 $(document).ready(function() {
 
   let faveSave = [];
+
+  let localData = JSON.parse(localStorage.getItem('items'))
   
   function callAjax(query = "cats") {
     let randomNum = Math.floor(Math.random() * 110); 
@@ -76,14 +78,20 @@ $(document).ready(function() {
 
 
    faveSave.push({'animate':animate, 'still':still})
+   let y = localStorage.setItem('items', JSON.stringify(faveSave))
  });
 
  //function will fire when faves need to be displayed
  $("#showFav").on( "click", function() {
   $("#theDiv").empty()
   
-  let y = localStorage.setItem('items', JSON.stringify(faveSave))
-  let localData = JSON.parse(localStorage.getItem('items'))
+if( faveSave.length > 0 && localData.length === 0){
+  localData = faveSave;
+  localData.push(faveSave)
+  localStorage.setItem('items', JSON.stringify(faveSave))
+
+}
+
 
   for(let j = 0; j<localData.length; j++){
 
@@ -100,7 +108,6 @@ $(document).ready(function() {
     ); 
   }
 
-  console.log( localData )
  });
 
 
@@ -108,7 +115,7 @@ $(document).ready(function() {
   {
     mouseenter: function() {
       let animateURL = $(this).attr("data-animateURL");
-      if ($(this).attr("data-animation") === "still") {
+      if($(this).attr("data-animation") === "still") {
         $(this).attr("data-animation", "animate");
         $(this).attr("src", animateURL);
       }
