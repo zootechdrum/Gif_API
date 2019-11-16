@@ -118,8 +118,15 @@ $(document).ready(function () {
  
   //Function that will remove favorites from the DOM
 
-  $(".delete").on("click", function(){
-  
+  $("#theDiv").on("click",".delete", function(){
+    for(var k = 0; k < localData.length; k++){
+      if(localData[k].still === $(this).data('still')){
+        localData.splice(k , 1)
+      }
+    }
+
+    localStorage.setItem("items", JSON.stringify(localData))
+    $("#showFav").trigger("click")
 
   })
 
