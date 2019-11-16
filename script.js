@@ -56,7 +56,7 @@ $(document).ready(function () {
     }
     $('#buttonDisplay').append('<button type="button" class="col-lg-3 btn btn-light" data-text=' + text + '">' + text + '</button>')
   }
-
+//Gets the value from the input and calls ajax method with new term
   $("#buttonDisplay").on("click", '.btn-light', function () {
     let search = $(this).text()
     $("#theDiv").empty()
@@ -82,6 +82,7 @@ $(document).ready(function () {
     storeItems({ 'animate': animate, 'still': still })
   });
 
+//Store Items in local storage
   function storeItems(obj){
     if(localData === null && obj !== undefined){
       faveSave.push(obj)
@@ -126,13 +127,14 @@ $(document).ready(function () {
     }
 
     localStorage.setItem("items", JSON.stringify(localData))
+    //Simulates a click to rerender the page and only show the faves
     $("#showFav").trigger("click")
 
   })
 
 
 
-
+//ON mouse hover the GIF will change url from still to animate
   $("#theDiv").on(
     {
       mouseenter: function () {
