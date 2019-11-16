@@ -56,7 +56,7 @@ $(document).ready(function () {
     }
     $('#buttonDisplay').append('<button type="button" class="historyBtn col-lg-3 btn btn-light" data-text=' + text + '">' + text + '</button>')
   }
-//Gets the value from the input and calls ajax method with new term
+  //Gets the value from the input and calls ajax method with new term
   $("#buttonDisplay").on("click", '.btn-light', function () {
     let search = $(this).text()
     $("#theDiv").empty()
@@ -78,24 +78,24 @@ $(document).ready(function () {
     let still = $(this).data('still')
     let animate = $(this).data('animate')
 
-    
+
 
     storeItems({ 'animate': animate, 'still': still })
   });
 
-//Store Items in local storage
-  function storeItems(obj){
-    if(localData === null && obj !== undefined){
+  //Store Items in local storage
+  function storeItems(obj) {
+    if (localData === null && obj !== undefined) {
       faveSave.push(obj)
       localData = faveSave
       localStorage.setItem("items", JSON.stringify(localData))
-    }else if(localData === null && obj === undefined){
+    } else if (localData === null && obj === undefined) {
       localData = [];
-    }else{
-    localData.push(obj)
-    localStorage.setItem("items", JSON.stringify(localData))
+    } else {
+      localData.push(obj)
+      localStorage.setItem("items", JSON.stringify(localData))
+    }
   }
-}
 
 
   //function will fire when faves need to be displayed
@@ -116,13 +116,13 @@ $(document).ready(function () {
       );
     }
   });
- 
+
   //Function that will remove favorites from the DOM
 
-  $("#theDiv").on("click",".delete", function(){
-    for(var k = 0; k < localData.length; k++){
-      if(localData[k].still === $(this).data('still')){
-        localData.splice(k , 1)
+  $("#theDiv").on("click", ".delete", function () {
+    for (var k = 0; k < localData.length; k++) {
+      if (localData[k].still === $(this).data('still')) {
+        localData.splice(k, 1)
       }
     }
 
@@ -134,7 +134,7 @@ $(document).ready(function () {
 
 
 
-//ON mouse hover the GIF will change url from still to animate
+  //ON mouse hover the GIF will change url from still to animate
   $("#theDiv").on(
     {
       mouseenter: function () {
