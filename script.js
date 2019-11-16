@@ -110,10 +110,18 @@ $(document).ready(function () {
         ' src= "' +
         localData[j].still +
         '"/>' +
+        "<button class='delete btn btn-primary' data-still=" + localData[j].still + ">Delete</button>" +
         "</div>"
       );
     }
   });
+ 
+  //Function that will remove favorites from the DOM
+
+  $(".delete").on("click", function(){
+  
+
+  })
 
 
 
