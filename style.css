@@ -7,9 +7,9 @@ form{
   display:block;
 }
 
-#theDiv{
+/* #theDiv{
   text-align: center;
-}
+} */
 
 input[type=submit]{
 color:white; 
