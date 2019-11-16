@@ -4,15 +4,25 @@ form{
 }
 #formContent{
   text-align: center;
-  display:block;
 }
 
+#showFavButton{
+  display: inline-block;
+  margin-bottom:10px;
+  border-radius: 50%;
+  width:45px;
+  height:40px;
+}
 
 input[type=submit]{
 color:white; 
 border-radius:10px;
 background-color:black;
 padding:5px;
+}
+
+.delete{
+  margin-top:5px;
 }
 
 
@@ -22,15 +32,28 @@ img{
   margin-top:40px;
   position:relative;
 }
+.historyBtn{
+  display:block;
+  margin-top:15px;
+  /* margin-left:80px; */
 
+}
 .btn{
   display:block;
   margin:0 auto;
   margin-top: 10px;
   min-width:100px;
 }
+
 button{
   max-width:130px;
+}
+
+.heartBtns{
+  display:block;
+  margin:0 auto;
+  margin-top: 10px;
+  min-width:100px;
 }
 
 #buttonDisplay{
@@ -59,10 +82,30 @@ button{
 }
 
 #showFav{
+  margin-top:2px;
   cursor: pointer;
   color:pink;
   font-size: 20px;
+   padding-top:6.3px; 
+  background:black;
+  border-radius: 50%;
+  height:30px;
+  width:30px;
 }
+
+#showFav:hover{
+  color:rgb(234, 12, 12);
+  transition:1s;
+}
+
+/* changes color of heart on click  */
+.pinkHeart{
+  color:pink;
+  cursor:pointer;
+}
+
+
+
 
 @media only screen and (max-width: 991px){
   .history{

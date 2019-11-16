@@ -32,7 +32,7 @@ $(document).ready(function () {
               ' src= "' +
               data.data[i].images.original_still.url +
               '"/>' +
-              "<button class='add2Fav btn btn-primary' data-animate=" + animateImg + " data-still=" + stillImg + ">Add to Faves</button>" +
+              "<button class='add2Fav btn heartBtn btn-primary' data-animate=" + animateImg + " data-still=" + stillImg + ">" + "<i  class='fa fa-heart' aria-hidden='true'></i></button>" +
               "</div>"
             );
           }
@@ -54,7 +54,7 @@ $(document).ready(function () {
     if (text.length > 6) {
       text = text.slice(0, 6) + '..';
     }
-    $('#buttonDisplay').append('<button type="button" class="col-lg-3 btn btn-light" data-text=' + text + '">' + text + '</button>')
+    $('#buttonDisplay').append('<button type="button" class="historyBtn col-lg-3 btn btn-light" data-text=' + text + '">' + text + '</button>')
   }
 //Gets the value from the input and calls ajax method with new term
   $("#buttonDisplay").on("click", '.btn-light', function () {
@@ -74,6 +74,7 @@ $(document).ready(function () {
 
   //If user click Add2Fav buttons push into faveSave array
   $("#theDiv").on("click", ".add2Fav", function () {
+    $(this).addClass("pinkHeart");
     let still = $(this).data('still')
     let animate = $(this).data('animate')
 
@@ -101,7 +102,6 @@ $(document).ready(function () {
   $("#showFav").on("click", function () {
     $("#theDiv").empty()
     for (let j = 0; j < localData.length; j++) {
-
       $("#theDiv").append(
         "<div class='gif text-center'>" +
         "<img class='col-lg' data-animation=still data-stillURL=" +
