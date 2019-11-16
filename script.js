@@ -32,7 +32,7 @@ $(document).ready(function () {
               ' src= "' +
               data.data[i].images.original_still.url +
               '"/>' +
-              "<button class='add2Fav btn btn-primary' data-animate=" + animateImg + " data-still=" + stillImg + ">Add to Fav</button>" +
+              "<button class='add2Fav btn btn-primary' data-animate=" + animateImg + " data-still=" + stillImg + ">Add to Faves</button>" +
               "</div>"
             );
           }
