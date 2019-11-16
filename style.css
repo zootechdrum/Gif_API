@@ -13,6 +13,9 @@ form{
   width:45px;
   height:40px;
 }
+.btn-primary:hover{
+  color:none !important;
+}
 
 input[type=submit]{
 color:white; 
@@ -35,7 +38,7 @@ img{
 .historyBtn{
   display:block;
   margin-top:15px;
-  /* margin-left:80px; */
+
 
 }
 .btn{
@@ -79,6 +82,9 @@ button{
   text-align:center;
   display:inline-block;
   margin-top:5px;
+}
+.add2Fav:hover{
+  color:pink;
 }
 
 #showFav{
