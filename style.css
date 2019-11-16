@@ -7,9 +7,6 @@ form{
   display:block;
 }
 
-/* #theDiv{
-  text-align: center;
-} */
 
 input[type=submit]{
 color:white; 
@@ -70,5 +67,8 @@ button{
 @media only screen and (max-width: 991px){
   .history{
     margin-top:15px;
+  }
+  #theDiv{
+    text-align: center;
   }
 }
