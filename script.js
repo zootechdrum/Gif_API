@@ -25,13 +25,14 @@ $(document).ready(function () {
 
             $("#theDiv").append(
               "<div class='gif text-center'>" +
-              "<img class='col-lg'+ data-animation=still data-stillURL=" +
+              "<img data-animation=still data-stillURL=" +
               data.data[i].images.original_still.url +
               " data-animateURL=" +
               data.data[i].images.original.url +
               ' src= "' +
               data.data[i].images.original_still.url +
               '"/>' +
+
               "<button class='add2Fav btn heartBtn btn-primary' data-animate=" + animateImg + " data-still=" + stillImg + ">" + "<i  class='fa fa-heart' aria-hidden='true'></i></button>" +
               "</div>"
             );
