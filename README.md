@@ -7,6 +7,7 @@ This project involves using GIPHY API to retrive awesome GIFS.
 1. JQuery
 2. CSS
 3. HTML5
+4. Local Storage 
 
 ## Quick snapshot of the project
 
@@ -36,6 +37,28 @@ Basically on mouse hover the img will change from still to original, thus displa
     },
     "img"
   );
+
+```
+
+I also managed to use the Local storage of the browser to save and Delete the GIF's
+The below code shows how I managed to delete the GIF and save the new array after
+into Local Storage
+
+```Javascript
+  //Function that will remove favorites from the DOM
+
+  $("#theDiv").on("click", ".delete", function () {
+    for (var k = 0; k < localData.length; k++) {
+      if (localData[k].still === $(this).data('still')) {
+        localData.splice(k, 1);
+      }
+    }
+
+    localStorage.setItem("items", JSON.stringify(localData))
+    //Simulates a click to rerender the page and only show the faves
+    $("#showFav").trigger("click");
+
+  })
 
 ```
 
