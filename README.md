@@ -13,6 +13,8 @@ This project involves using GIPHY API to retrive awesome GIFS.
 
 ![giphyloop](assets/images/giphyloop.gif)
 
+## Code Snippet
+
 I really liked this part of my code as it was something I have never used on another project
 Basically on mouse hover the img will change from still to original, thus displaying the animated GIPHY.
 
@@ -39,7 +41,7 @@ Basically on mouse hover the img will change from still to original, thus displa
   );
 
 ```
-
+## Additional Snippet
 I also managed to use the Local storage of the browser to save and Delete the GIF's
 The below code shows how I managed to delete the GIF and save the new array after
 into Local Storage
