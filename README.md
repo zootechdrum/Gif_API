@@ -62,3 +62,6 @@ into Local Storage
 
 ```
 
+Here is a link to my LinkedIn
+https://www.linkedin.com/in/cesar-gomez-zootechnic/
+
