@@ -2,7 +2,7 @@ form{
   margin-top:15px;
   height:30px;
 }
-#formContent{
+#formContainer{
   text-align: center;
 }
 
@@ -117,7 +117,7 @@ button{
   .history{
     margin-top:15px;
   }
-  #theDiv{
+  #gif-container{
     text-align: center;
   }
 }

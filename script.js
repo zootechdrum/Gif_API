@@ -16,7 +16,7 @@ $(document).ready(function () {
       {
         success: function (data, status, xhr) {
           if (data.data.length < 1) {
-            $("#theDiv").html("<h2 class=' null-result text-center'>Nothing to see here</h2>")
+            $("#gif-container").html("<h2 class=' null-result text-center'>Nothing to see here</h2>")
           }
           for (var i = 0; i < data.data.length; i++) {
 
