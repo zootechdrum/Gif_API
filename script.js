@@ -10,7 +10,7 @@ $window.resize(function resize() {
       return $("#button-display").addClass('sidenav');
   }
 
-  $("#button-display").removeClass('sidenav');
+  $("#button-display").removeClass('sidenav sidenav-close');
 }).trigger('resize');
 //////////
   let localData = JSON.parse(localStorage.getItem('items'))
@@ -56,7 +56,7 @@ $window.resize(function resize() {
   $("#form").submit(function (event) {
     event.preventDefault();
     let newSearch = $("input").val();
-    $("#theDiv").empty();
+    $("#gif-container").empty();
     callAjax(newSearch);
     createButton(newSearch)
     $("#input").val("");
@@ -71,14 +71,14 @@ $window.resize(function resize() {
   //Gets the value from the input and calls ajax method with new term
   $("#buttonDisplay").on("click", '.btn-light', function () {
     let search = $(this).text()
-    $("#theDiv").empty()
+    $("#gif-container").empty()
     $("#input").val("");
     callAjax(search)
   })
 
   //This button will clear the history. 
   $("#warning").on("click", function () {
-    $("#theDiv").empty()
+    $("#gif-container").empty()
     callAjax()
     $('button').not(':first').remove();
 
@@ -114,7 +114,7 @@ $window.resize(function resize() {
   $("#showFav").on("click", function () {
     $("#gif-container").empty()
     for (let j = 0; j < localData.length; j++) {
-      $("#theDiv").append(
+      $("#gif-container").append(
         "<div class='gif text-center'>" +
         "<img class='col-lg' data-animation=still data-stillURL=" +
         localData[j].still +
@@ -131,7 +131,7 @@ $window.resize(function resize() {
 
   //Function that will remove favorites from the DOM
 
-  $("#theDiv").on("click", ".delete", function () {
+  $("#gif-container").on("click", ".delete", function () {
     for (var k = 0; k < localData.length; k++) {
       if (localData[k].still === $(this).data('still')) {
         localData.splice(k, 1)
@@ -168,14 +168,16 @@ $window.resize(function resize() {
   );
 
     $(".history-burger").on("click", function () {
-      $("#button-display").addClass( " sidenav ")
+      $("#button-display").addClass( " sidenav sidenav-width ")
       $("#button-display").prepend( " <p class='close-button'>&times;</p> ")
-      $(".sidenav").width(250)
+      // $(".sidenav").width(250)
       
     })
 
     $("#button-display").on("click", ".close-button", function () {
-      $(".sidenav").width(0)   
+
+      $(".sidenav").removeClass("sidenav-width")  
+      $(".sidenav").addClass("sidenav-close")
     })
 
 

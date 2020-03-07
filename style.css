@@ -146,11 +146,14 @@ button{
   display:none;
 
 }
-
-.button-display-header{
-  display:block;
-  width:100%;
+.sidenav-width{
+  width: 250px;
 }
+
+.sidenav-close{
+  width:0;
+}
+
 
 
 @media only screen and (max-width: 991px){
@@ -160,9 +163,7 @@ button{
   background-color: white;
   margin-bottom:0px;
 }
-  #button-display{
-    display:none;
-  }
+
 
   .sidenav{
     display:block !important;
