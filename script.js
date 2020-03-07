@@ -2,9 +2,9 @@ $(document).ready(function () {
 
   let faveSave = [];
 
-  var $window = $(window),
-   $html = $('html');
+  var $window = $(window)
 
+//Checks what size the window is to see if sidenav class should be applied
 $window.resize(function resize() {
   if ($window.width() < 991) {
       return $("#button-display").addClass('sidenav');
@@ -12,7 +12,7 @@ $window.resize(function resize() {
 
   $("#button-display").removeClass('sidenav');
 }).trigger('resize');
-
+//////////
   let localData = JSON.parse(localStorage.getItem('items'))
   console.log(localData)
 
@@ -169,6 +169,7 @@ $window.resize(function resize() {
 
     $(".history-burger").on("click", function () {
       $("#button-display").addClass( " sidenav ")
+      $("#button-display").prepend( " <p class='close-button'>&times;</p> ")
       $(".sidenav").width(250)
       
     })
