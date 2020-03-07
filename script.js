@@ -2,6 +2,17 @@ $(document).ready(function () {
 
   let faveSave = [];
 
+  var $window = $(window),
+   $html = $('html');
+
+$window.resize(function resize() {
+  if ($window.width() < 991) {
+      return $("#button-display").addClass('sidenav');
+  }
+
+  $("#button-display").removeClass('sidenav');
+}).trigger('resize');
+
   let localData = JSON.parse(localStorage.getItem('items'))
   console.log(localData)
 

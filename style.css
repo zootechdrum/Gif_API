@@ -140,7 +140,7 @@ button{
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
-  display:block !important;
+  display:none;
 }
 
 
@@ -156,6 +156,10 @@ button{
     display:none;
   }
 
+  .sidenav{
+    display:block !important;
+  }
+
   .history-burger{
     display:inline-block;
     position:absolute;
@@ -166,6 +170,4 @@ button{
   .button-display-header{
     color:white;
   }
-
-
 }
