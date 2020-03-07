@@ -174,6 +174,10 @@ $window.resize(function resize() {
       
     })
 
+    $("#button-display").on("click", ".close-button", function () {
+      $(".sidenav").width(0)   
+    })
+
 
   //For history button on mobile
 
