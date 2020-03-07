@@ -168,14 +168,12 @@ $window.resize(function resize() {
   );
 
     $(".history-burger").on("click", function () {
+      $(".sidenav").removeClass("sidenav-close")
       $("#button-display").addClass( " sidenav sidenav-width ")
-      $("#button-display").prepend( " <p class='close-button'>&times;</p> ")
-      // $(".sidenav").width(250)
-      
+      $("#button-display").prepend( " <p class='close-button'>&times;</p> ")  
     })
 
     $("#button-display").on("click", ".close-button", function () {
-
       $(".sidenav").removeClass("sidenav-width")  
       $(".sidenav").addClass("sidenav-close")
     })
