@@ -114,15 +114,14 @@ button{
 
 
 @media only screen and (max-width: 991px){
-  #history-container{
-    text-align: center;
-  }
-
+#form-container{
+  height:100px;
+  background-color: white;
+  margin-bottom:0px;
+}
   #button-display{
     display:none;
   }
 
-  #gif-container{
-    text-align: center;
-  }
+
 }
