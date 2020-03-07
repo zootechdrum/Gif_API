@@ -23,7 +23,7 @@ $(document).ready(function () {
             let stillImg = data.data[i].images.original_still.url
             let animateImg = data.data[i].images.original.url
 
-            $("#theDiv").append(
+            $("#gif-container").append(
               "<div class='gif text-center'>" +
               "<img data-animation=still data-stillURL=" +
               data.data[i].images.original_still.url +
@@ -74,7 +74,7 @@ $(document).ready(function () {
   })
 
   //If user click Add2Fav buttons push into faveSave array
-  $("#theDiv").on("click", ".add2Fav", function () {
+  $("#gif-container").on("click", ".add2Fav", function () {
     $(this).addClass("pinkHeart");
     let still = $(this).data('still')
     let animate = $(this).data('animate')
@@ -101,7 +101,7 @@ $(document).ready(function () {
 
   //function will fire when faves need to be displayed
   $("#showFav").on("click", function () {
-    $("#theDiv").empty()
+    $("#gif-container").empty()
     for (let j = 0; j < localData.length; j++) {
       $("#theDiv").append(
         "<div class='gif text-center'>" +
@@ -136,7 +136,7 @@ $(document).ready(function () {
 
 
   //ON mouse hover the GIF will change url from still to animate
-  $("#theDiv").on(
+  $("#gif-container").on(
     {
       mouseenter: function () {
         let animateURL = $(this).attr("data-animateURL");

@@ -114,9 +114,14 @@ button{
 
 
 @media only screen and (max-width: 991px){
-  .history{
-    margin-top:15px;
+  #history-container{
+    text-align: center;
   }
+
+  #button-display{
+    display:none;
+  }
+
   #gif-container{
     text-align: center;
   }
