@@ -66,8 +66,8 @@ into Local Storage
 
 ### Mobile View
 
-![mobile-view](assets/images/mobile-view)
-![mobile-view](assets/images/sidenav)
+![mobile-view](assets/images/mobile-view.png)
+![mobile-view](assets/images/sidenav.png)
 
 Here is a link to my LinkedIn
 https://www.linkedin.com/in/cesar-gomez-zootechnic/
