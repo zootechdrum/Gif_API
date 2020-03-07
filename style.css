@@ -1,9 +1,17 @@
-form{
+body{
+  position: relative;
+}
 
+form{
   height:50px;
   background-color: #fff;
   width:100%;
 }
+
+.history-burger{
+  display:none;
+}
+
 #formContainer{
   text-align: center;
 }
@@ -131,6 +139,13 @@ button{
 }
   #button-display{
     display:none;
+  }
+
+  .history-burger{
+    display:inline-block;
+    position:absolute;
+    bottom:0;
+    position: fixed;
   }
 
 
