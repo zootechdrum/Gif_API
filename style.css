@@ -1,6 +1,8 @@
 form{
-  margin-top:15px;
-  height:30px;
+
+  height:50px;
+  background-color: #fff;
+  width:100%;
 }
 #formContainer{
   text-align: center;
@@ -10,20 +12,22 @@ form{
   display: inline-block;
   margin-bottom:10px;
   border-radius: 50%;
+  padding:15px;
   width:45px;
   height:40px;
 }
 .btn-primary:hover{
   color:none !important;
 }
-
-input[type=submit]{
-color:white; 
-border-radius:10px;
-background-color:black;
-padding:5px;
+.search-field{
+  margin-top:-10px;
 }
 
+
+
+#submit{
+  margin-top:-10px;
+}
 .delete{
   margin-top:5px;
 }
@@ -108,6 +112,12 @@ button{
 .pinkHeart{
   color:pink;
   cursor:pointer;
+}
+
+#submit{
+  display: inline-block;
+  margin:0px;
+  padding:none;
 }
 
 

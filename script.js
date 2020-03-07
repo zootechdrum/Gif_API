@@ -55,7 +55,7 @@ $(document).ready(function () {
     if (text.length > 6) {
       text = text.slice(0, 6) + '..';
     }
-    $('#buttonDisplay').append('<button type="button" class="historyBtn col-lg-3 btn btn-light" data-text=' + text + '">' + text + '</button>')
+    $('#button-display').append('<button type="button" class="historyBtn col-lg-3 btn btn-light" data-text=' + text + '">' + text + '</button>')
   }
   //Gets the value from the input and calls ajax method with new term
   $("#buttonDisplay").on("click", '.btn-light', function () {
