@@ -155,5 +155,15 @@ $(document).ready(function () {
     },
     "img"
   );
+
+    $(".history-burger").on("click", function () {
+      $("#button-display").addClass( " sidenav ")
+      $(".sidenav").width(250)
+      
+    })
+
+
+  //For history button on mobile
+
   callAjax();
 });
