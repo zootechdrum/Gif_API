@@ -1,8 +1,10 @@
 $(document).ready(function () {
 
+  new ClipboardJS('.copyUrlBtn');
+
   let faveSave = [];
 
-  var $window = $(window)
+  let $window = $(window)
 
 //Checks what size the window is to see if sidenav class should be applied
 $window.resize(function resize() {
@@ -29,10 +31,11 @@ $window.resize(function resize() {
           if (data.data.length < 1) {
             $("#gif-container").html("<h2 class=' null-result text-center'>Nothing to see here</h2>")
           }
-          for (var i = 0; i < data.data.length; i++) {
+          for (let i = 0; i < data.data.length; i++) {
             console.log(data.data[i])
             let stillImg = data.data[i].images.original_still.url
             let animateImg = data.data[i].images.original.url
+            let gifUrl = data.data[i].embed_url
 
             $("#gif-container").append(
               "<div class='gif text-center'>" +
@@ -44,7 +47,7 @@ $window.resize(function resize() {
               data.data[i].images.original_still.url +
               '"/>' +
               "<button class='add2Fav custom-block-btn btn heartBtn btn-primary' data-animate=" + animateImg + " data-still=" + stillImg + ">" + "<i  class='fa fa-heart' aria-hidden='true'></i></button>" +
-              "<button class='add2Fav custom-block-btn btn heartBtn btn-danger'>" + "<i class='far fa-clipboard'></i></button>" +
+              "<button class='copyUrlBtn custom-block-btn btn heartBtn btn-danger' data-clipboard-text=" + gifUrl + ">" + "<i class='far fa-clipboard'></i></button>" +
               "</div>"
             );
           }
@@ -84,11 +87,21 @@ $window.resize(function resize() {
 
   })
 
+  //If user clicks on clipboard button
+
+  $("#gif-container").on("click", ".copyUrlBtn", function () {
+    const url = $(this).data("clipboard-text");
+    url.select();
+    const l = document.execCommand("copy");
+  
+  });
+
+
   //If user click Add2Fav buttons push into faveSave array
   $("#gif-container").on("click", ".add2Fav", function () {
     $(this).addClass("pinkHeart");
-    let still = $(this).data('still')
-    let animate = $(this).data('animate')
+    const still = $(this).data('still')
+    const animate = $(this).data('animate')
 
 
 
@@ -132,7 +145,7 @@ $window.resize(function resize() {
   //Function that will remove favorites from the DOM
 
   $("#gif-container").on("click", ".delete", function () {
-    for (var k = 0; k < localData.length; k++) {
+    for (let k = 0; k < localData.length; k++) {
       if (localData[k].still === $(this).data('still')) {
         localData.splice(k, 1)
       }
