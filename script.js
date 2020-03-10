@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+  //This line is for the copy to clipboard package. 
   new ClipboardJS('.copyUrlBtn');
 
   let faveSave = [];
@@ -46,7 +47,9 @@ $window.resize(function resize() {
               ' src= "' +
               data.data[i].images.original_still.url +
               '"/>' +
+              //Button is for save
               "<button class='add2Fav custom-block-btn btn heartBtn btn-primary' data-animate=" + animateImg + " data-still=" + stillImg + ">" + "<i  class='fa fa-heart' aria-hidden='true'></i></button>" +
+              //This button is to copy to clipboard
               "<button class='copyUrlBtn custom-block-btn btn heartBtn btn-danger' data-clipboard-text=" + gifUrl + ">" + "<i class='far fa-clipboard'></i></button>" +
               "</div>"
             );
