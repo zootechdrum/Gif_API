@@ -30,7 +30,7 @@ $window.resize(function resize() {
             $("#gif-container").html("<h2 class=' null-result text-center'>Nothing to see here</h2>")
           }
           for (var i = 0; i < data.data.length; i++) {
-
+            console.log(data.data[i])
             let stillImg = data.data[i].images.original_still.url
             let animateImg = data.data[i].images.original.url
 
@@ -43,8 +43,8 @@ $window.resize(function resize() {
               ' src= "' +
               data.data[i].images.original_still.url +
               '"/>' +
-
-              "<button class='add2Fav btn heartBtn btn-primary' data-animate=" + animateImg + " data-still=" + stillImg + ">" + "<i  class='fa fa-heart' aria-hidden='true'></i></button>" +
+              "<button class='add2Fav custom-block-btn btn heartBtn btn-primary' data-animate=" + animateImg + " data-still=" + stillImg + ">" + "<i  class='fa fa-heart' aria-hidden='true'></i></button>" +
+              "<button class='add2Fav custom-block-btn btn heartBtn btn-danger'>" + "<i class='far fa-clipboard'></i></button>" +
               "</div>"
             );
           }
@@ -152,8 +152,8 @@ $window.resize(function resize() {
       mouseenter: function () {
         let animateURL = $(this).attr("data-animateURL");
         if ($(this).attr("data-animation") === "still") {
-          $(this).attr("data-animation", "animate");
-          $(this).attr("src", animateURL);
+            $(this).attr("data-animation", "animate");
+            $(this).attr("src", animateURL);
         }
       },
       mouseleave: function () {

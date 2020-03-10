@@ -26,6 +26,11 @@ form{
   width:45px;
   height:40px;
 }
+
+.custom-block-btn{
+  display:block !important;
+}
+
 .btn-primary:hover{
   color:none !important;
 }
